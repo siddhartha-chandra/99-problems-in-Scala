@@ -13,4 +13,13 @@ object P05{
     }
     reverseTail(Nil, ls)
   }
+
+  def reversePureFunctional[A](ls: List[A]): List[A] =
+    ls.foldLeft(List[A]()){(r,h) => h::r}
+    // Nil (1,2,3,4,5)
+    // (1,Nil) (2,3,4,5)
+    // (2,1,Nil) (3,4,5)
+    // (3,2,1,Nil) (4,5)
+    // (4,3,2,1,Nil) (5)
+    // (5,4,3,2,1) Nil ==> (5,4,3,2,1)
 }
