@@ -29,7 +29,7 @@ object P08{
       }
     }
 
-
+  //My implementation
   def compress[A](ls: List[A]): List[A] = {
     def compressInner[A](ls: List[A], aggregator: List[A] = List()): List[A] =ls match {
       case Nil => aggregator
