@@ -25,4 +25,15 @@ object P09{
                   (x :: y.head) :: y.tail
     }
   }
+
+  //Given Solution
+  def packSol[A](ls: List[A]): List[List[A]] = {
+    if (ls.isEmpty) List(List())
+    else {
+      val (packed, next) = ls span { _ == ls.head }
+      if (next == Nil) List(packed)
+      else packed :: packSol(next)
+      }
+  }
+
 }
