@@ -9,4 +9,8 @@ object P11{
   def encodeModified[A](ls: List[A]): List[Any] = {
     pack(ls).map(x=> if (x.length == 1) x.head else (x.length, x.head))
   }
+
+  def encodeModifiedTypesafe[A](ls: List[A]): List[Either[A, (Int, A)]] = {
+    pack(ls).map(x=> if (x.length == 1) Left(x.head) else Right(x.length, x.head))
+  }
 }
