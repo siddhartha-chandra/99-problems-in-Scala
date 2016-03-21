@@ -15,7 +15,7 @@ object P08{
     compressInner(ls)
   }
 
-  // Functional.
+  // Functional
   def compressFunctional[A](ls: List[A]): List[A] =
     ls.foldRight(List[A]()){
     (x,y) =>
